@@ -1,0 +1,15 @@
+<%- contentFor('body') %>
+
+<h1> Welcome, these are your last activities on Endomondo</h1>
+
+<% for (activity of activities.data) { %>
+  
+    <a href="/endomondo/activity/<%= activity.id %>">
+      <div class="col-sm-3" data-id="<%= activity.id %>">
+        <h2>Distance: <%= formatKm (activity.distance_km) %> Km</h2>
+        <h2>Calories: <%= activity.calories %> </h2>
+        <h2>Duration: <%= formatDurationFromSec (activity.duration_sec) %> </h2>
+      </div>
+    </a>
+  
+<% } %>

@@ -1,0 +1,15 @@
+<%- contentFor('body') %>
+
+<h1> DATA </h1>
+activityId: <%= activity.activityId %> <br>
+activityType: <%= activity.activityType %> <br>
+startTime: <%= activity.startTime %> <br>
+activityTimeZone: <%= activity.activityTimeZone %> <br>
+status: <%= activity.status %> <br>
+deviceType: <%= activity.deviceType %> <br>
+<h2>metricSummary</h2>
+calories: <%= activity.metricSummary.calories %> <br>
+fuel: <%= activity.metricSummary.fuel %> <br>
+distance: <%= activity.metricSummary.distance %> <br>
+steps: <%= activity.metricSummary.steps %> <br>
+duration: <%= activity.metricSummary.duration %> <br>

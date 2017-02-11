@@ -1,0 +1,27 @@
+<%- contentFor('body') %>
+
+<h1> Welcome, these are your last activities </h1>
+
+<img src="<%= token.profile_img_url %>" alt="">
+
+
+<% for (activity of activities.activities) { %>
+	
+
+
+    <a href="/nike/activity/<%= activity.id %>">
+      <div class="col-sm-3" data-id="<%= activity.id %>">
+        <h2>Type: <%=activity.type %></h2>
+        <% if (activity && activity.summaries[0] !== null) { %>
+          <h2>Distance: <%= formatKm (activity.summaries[0].value) %> Km</h2>
+        <% } %>
+        <% if (activity && activity.summaries[4] !== null) { %>
+          <h2>Calories: <%= activity.summaries[4].value.toFixed(0) %> </h2>
+        <% } %>
+        <% if (activity && activity.active_duration_ms !== null) { %>
+          <h2>Duration: <%= convertFromMs (activity.active_duration_ms) %> </h2>
+        <% } %>
+      </div>
+    </a>
+  
+<% } %>

@@ -1,0 +1,16 @@
+<%- contentFor('body') %>
+
+<h1> DATA </h1>
+
+
+
+<div class="col-sm-12" data-id="<%= activity.id %>">
+    <h2>Type: <%=activity.type %></h2>
+    <h2>Distance: <%= formatKm (activity.summaries[0].value) %> Km</h2>
+    <h2>Calories: <%= activity.summaries[4].value.toFixed(0) %> </h2>
+    <h2>Duration: <%= convertFromMs (activity.active_duration_ms) %> </h2>
+    <h2>PACE: <%= convertPace (activity.summaries[3].value) %> </h2>
+    <% if (activity && activity.summaries[8] !== '') { %>
+    	<h2>Heart Rate: <%= activity.summaries[8].value.toFixed(0) %> </h2>
+    <% } %>
+  </div>

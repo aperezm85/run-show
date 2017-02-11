@@ -1,0 +1,21 @@
+<%- contentFor('body') %>
+<form method="POST">
+	<h2>Insert your Nike+ credentials</h2>
+
+  <% if (error && error !== '') { %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Error!</strong> <%= error %>
+    </div>
+  <% } %>
+
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
