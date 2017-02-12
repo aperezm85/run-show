@@ -12,6 +12,7 @@ module.exports = {
 
         activitiesListUrlv3: 'https://api.nike.com/sport/v3/me/activities/before_time/',
         activityv3: 'https://api.nike.com/sport/v3/me/activity/',
+        addActivity: 'https://api.nike.com/v2.0/me/sync'
     },
 
     endomondo: {

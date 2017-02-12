@@ -10,4 +10,6 @@ router.post('/', accessApi.getAccessToken);
 
 router.get('/activity/:id', accessApi.getActivity);
 
+router.get('/newactivity', accessApi.createActivity);
+
 module.exports = router;

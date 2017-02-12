@@ -48,6 +48,15 @@ module.exports = {
 
     createActivity: function (req, res) {
         var access_token = req.session.nike_access_token;
+
+        nikeService.createActivity(access_token, req.body, function (err, result) {
+            if (err) {
+                return res.status(500).json({error: err});
+            } else {
+                res.render('pages/nike/activity', {activity: result});
+            }
+        });
+
     },
 
     logout: function (req, res) {
